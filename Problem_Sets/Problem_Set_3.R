@@ -31,3 +31,11 @@ for (i in 1:1000) {
   result5 <- c(result5,res)
 }
 hist(result5)
+#####Bean machine#####
+res <- c()
+for (i in 1000) {
+  end <- 0
+  for (j in 1:8) {
+    end <- end + sample(2,1,replace=FALSE)
+  }
+}

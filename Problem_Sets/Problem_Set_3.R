@@ -33,9 +33,15 @@ for (i in 1:1000) {
 hist(result5)
 #####Bean machine#####
 res <- c()
-for (i in 1000) {
-  end <- 0
-  for (j in 1:8) {
-    end <- end + sample(2,1,replace=FALSE)
-  }
+for (i in 1:1000) {
+  end <- sum(sample(c(0,1),8,replace=TRUE))
+  res <- c(res,end)
 }
+hist(res,axes = F,main = "Bean machine",xlab = "",ylab = "")
+#asymmetric
+res_a <- c()
+for (i in 1:1000) {
+  end <- sum(sample(c(0,1),8,replace=TRUE,p=c(0.8,0.2)))
+  res_a <- c(res_a,end)
+}
+hist(res_a,axes = F,main = "Bean machine (asymmetric)",xlab = "",ylab = "")

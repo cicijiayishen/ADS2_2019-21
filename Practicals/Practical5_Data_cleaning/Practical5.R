@@ -1,0 +1,31 @@
+#####Task 1 WNV#####
+library(tidyr)
+data <- read.csv("C:/Users/sissy/Desktop/test Git/ADS2_2019-21/Practicals/Practical5_Data_cleaning/WNV_mosquito_test_results.csv",na.strings=c(""))
+levels(as.factor(data$LOCATION))
+data.noNA <- drop_na(data)
+anyNA(data.noNA)
+class(data.noNA$LOCATION)
+colnames(data.noNA)[1] <- c("YEAR")
+data.noNA$TEST.DATE <- as.POSIXct(data.noNA$TEST.DATE,tz = "America/Chicago",format("%m/%d/%Y %H:%M:%S"))
+class(data.noNA$TEST.DATE)
+dat1 <- data.noNA$TEST.DATE[1]
+attributes(dat1)
+attributes(dat1)$tzone <- "America/Los_Angeles"
+attributes(dat1)
+data.noNA$LOCATION <- gsub("[()]","", data.noNA$LOCATION, perl = T)
+data.final <- separate(data.noNA,LOCATION, into = c("LATITUDE", "LONGITUDE"), sep = ",", remove = F, fill = "left" ,convert = T)
+summary(data.final)
+
+#####Task 2#####
+data2 <- read.csv("C:/Users/sissy/Desktop/test Git/ADS2_2019-21/Practicals/Practical5_Data_cleaning/Tests_PGP3.csv",na.strings = c("","NA"))
+class(data2$age.f)
+data2$sex <- gsub("1","M",as.character(data2$sex))
+data2$sex <- gsub("2","F",as.character(data2$sex))
+data2$sex <- as.factor(data2$sex)
+data2.noNA <- drop_na(data2)
+boxplot(data = data2.noNA,data2.noNA$elisa.od~data2.noNA$age.f)
+boxplot(data = data2.noNA,data2.noNA$elisa.od~data2.noNA$sex)
+library(ggplot2)
+data2.gather <- gather(data2.noNA,key = "time.point",value = "ELISA.od",elisa.od:elisa.pre.od,factor_key = T)
+ggplot(data = data2.gather,aes(age.f,ELISA.od,col=time.point))+geom_boxplot()
+data2.spread <- spread(data = data2.gather,key = time.point,value = ELISA.od)

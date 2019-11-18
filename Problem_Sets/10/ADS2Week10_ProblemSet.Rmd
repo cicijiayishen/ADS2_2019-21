@@ -1,0 +1,63 @@
+---
+title: "2019ADS2 Week10 T test"
+author: "by Wanlu Liu, wanluliu@intl.zju.edu.cn"
+date: '2019-11-18'
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### 1. Introduction
+This R Markdown file contains a tutorial of how to do different form of t test manually and in R. For those problems that need to workout manually, please include the formula and process of how you get the final number.
+
+### 2. one sample t test
+Let's say a gene called SOX17, from the published dataset, we found that its average expression in different lines (more than 30) of human embryonic stem cells is 8.9 (unit in RPKM). From your experiment, you used a new human embryonic stem cell line that is generated in ZJE, and you did RNA-seq of three biological replicates to check its expression in this cell line and found out its expression is 15, 30,50 (RPKM). Is there enough evidence to show our embryonic stem cell's SOX17 expression is very different from others under significance level of 0.05?
+
+Please write out the formula you used to calculte the statistics.
+
+1. step 1 : State the hypotheses and identify the claim.
+2. Step 2: what distribution to use? 
+3. Step 3: Find the critical value. 
+4. Step 4: Compute the test value.
+5. Step 5: Make the decision.
+6. Step 6:Summarize the results.
+
+Please write out the R code calculte the statistics.
+
+### 2. two sample t test
+#### 2.1 paired two sample t test
+We followed a set of 5 paitents with acute myeloid leukemia. We want to investigate whether the oncogene AML1 expression is repressed after a new treatment. Thus we tested their AML1 expression before and after the therapy. The gene expression level fo AML1 before the treatment is: $$x_1,x_2,x_3,x_4,x_5=c(102,340,234,332,129)$$. And the gene expression level fo AML1 after the treatment is: $$y_1,y_2,y_3,y_4,y_5=c(74,56,70,104,11)$$. Is there enough evidence to support the claim that the new treatment significantly reduce the AML1 expression level in acute myeloid leukemia paitents under significance level of 0.05?
+
+1. step 1 : State the hypotheses and identify the claim.
+2. Step 2: what distribution to use? 
+3. Step 3: Find the critical value. 
+4. Step 4: Compute the test value.
+5. Step 5: Make the decision. 
+6. Step 6:Summarize the results. 
+
+Please write out the R code calculte the statistics.
+
+#### 2.2 unpaired two sample t test
+
+There are two types of human embryonic stem cells (naive vs primed). We have the RNAseq data for naive hESC (4 biological replicate replicates) and primed hESCs (4 biological replicates). In each RNAseq dataset, there are 23368 genes identified. We want to find out those genes that are significantly differential expressed (either up regulated or down regulated) under significance level of 0.05. Hint, use unpaired t test to find out genes with p-value less than 0.05.
+
+```{r twosampleunpaired}
+geneexp=read.csv("week10_t_test_problemset_testdata.csv")
+head(geneexp)
+tail(geneexp)
+dim(geneexp)
+```
+
+#### 2.3 One step further - Multiple testing correction (Advanced thinking, optional)
+##### 2.3.1 Why Multiple Testing Matters?
+Genomics usually have Lots of Data which means there will be lots of Hypothesis Tests in one experiment. For example, a typical RNAseq experiment might result in performing
+20000 separate hypothesis tests (like what we did before). If we use a standard p-value
+cut-off of 0.05, we’d expect 1000  (20000*0.05) genes to be deemed 'significant' by chance (not reasonable). Thus we usually will perform multiple testing correction after we calculate p-value for genomics. You can refer to this coursera online course video if you are interested in https://www.coursera.org/lecture/statistical-genomics/multiple-testing-8-25-NsJfs
+
+
+#### R Markdown
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.

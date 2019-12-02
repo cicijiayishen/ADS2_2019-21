@@ -1,0 +1,71 @@
+---
+title: "Practical12"
+author: "Cici"
+date: "12/02/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+I am the *best* student.
+
+**bold**
+
+- Prepare tutorial
+- Go to class
+- Revise lecture
+- Finish ICA report
+
+1. Eat breakfast
+2. Eat lunch
+4. Eat dinner
+2. Sleep
+
+```{r}
+x=2
+y=3
+x+y
+```
+
+```{r echo=FALSE}
+2+2
+```
+
+## Including Plots
+
+```{r}
+hist(rnorm(10000),col="tomato")
+```
+
+```{r}
+x
+```
+
+We determined that the sum 1 and 2 was `r 1+2` surprisingly.
+
+```{r}
+dragonwing <- read.csv("C:/Users/sissy/Desktop/test Git/ADS2_2019-21/Practicals/Practical12_R_Markdown/dragons.csv")
+dragon <- c()
+for (j in 1:500) {
+  dragon <- c(dragon,dragonwing[j,])
+}
+hist(dragon,col="tomato")
+```
+
+```{r}
+library(knitr)
+kable(dragonwing[1:5,])
+kable(summary(dragonwing))
+```
+
+```{r}
+mice <- read.csv("C:/Users/sissy/Desktop/test Git/ADS2_2019-21/Practicals/Practical12_R_Markdown/mouse_report.csv")
+kable(mice[1:20,c(2,4,5)])
+kable(summary(mice))
+```  
+
+![Figure 1: xxx]("C:/Users/sissy/Desktop/test Git/ADS2_2019-21/Practicals/Practical12_R_Markdown/haining_bridge_snow.png")

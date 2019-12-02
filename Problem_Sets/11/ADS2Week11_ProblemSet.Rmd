@@ -1,0 +1,71 @@
+---
+title: "2019ADS2 Week11 Power and Sample Size"
+author: "by Wanlu Liu, wanluliu@intl.zju.edu.cn"
+date: '2019-11-25'
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### 1. Introduction
+This R Markdown file contains a tutorial of assessing the effects of different statistical power and sample size. For those problems that need to workout manually, please include the statistical formula and process of how you get the final number.
+
+### 2. one sample sample size estimation
+An investigator wants to estimate the mean birth weight of infants born full term (approximately 40 weeks gestation) to mothers who are 35 years of age and older The mean birth weight of infants born full-term to mothers under 35 3,510 grams with a standard deviation of 385 grams. How many women older than 35 years of age must be enrolled in the study to ensure that a 95% confidence interval estimate of the mean birth weight of their infants has a margin of error not exceeding 100 grams?
+
+1. step 1: identify experiemnt type, significance leve, criticle value, effect size, variance.
+
+2. Step 2: calculate the sample size needed with the following formula.
+$$n=\frac{Z_{1-\alpha/2}*variance}{EffectSize}$$
+
+3. Step 3.  In planning the study, the investigator must consider the fact that some women may deliver prematurely. If women are enrolled into the study during pregnancy, then more than (the sampe size you calcuated before) women will need to be enrolled so that after excluding those who deliver prematurely, we will have our designed number of effective experiment datapoints. For example, if 5% of the women are expected to delivery prematurely (i.e., 95% will deliver full term), then how many women need to be enrolled ($n_{total}$)?
+
+4. Step 4. Conclusion.
+
+
+### 2. two sample sample size estimation
+
+An investigator is planning a study to assess the association between coffee consumption and grade point average among college seniors. The plan is to categorize students as heavy drinkers or not using 5 or more cups of coffee on a typical day as the criterion for heavy consumption. Mean grade point averages will be compared between students classified as heavy consumption versus not using a two independent samples test of means. The standard deviation in grade point averages is assumed to be 0.42 and a meaningful difference in grade point averages (relative to coffee consumption status) is 0.25 units. How many college seniors should be enrolled in the study to ensure that the power of the test is 80% to detect a 0.25 unit difference in mean grade point averages? Use a two-sided test with a 5% level of significance.
+
+1. step 1 : identify key values.
+
+2. Step 2: calculate the sample size needed with the following formula.
+$$n=2*(\frac{Z_{1-\alpha/2}+Z_{1-\beta}}{\frac{\delta}{\sigma}})^2$$
+
+
+3. Step 3. Conclusion.
+
+4. Step 4. Test this with R power.t.test function.
+
+### 3. relationship between statistical power, sample size, significance leve and effect size.
+In this problem, let's investigate the relationship between statistical power, sample size, significance leve and effect size. We will use the a new example. 
+
+3.1 Let's assume for a two sample, two-sided test,  our significance level is 0.05. The standard variation of our sample is 0.5. If our sample size is 20, what's the statistical power under a effect size (mean difference of two population) of 0.4? 
+
+
+3.2 What happens to our statistical power (increase or decrease) if we increase our significance level to 0.1.
+
+3.3 What happens to our statistical power (increase or decrease) if we decrease our sample size to 10? 
+
+3.4 What happens to our statistical power (increase or decrease) if we increase our effect size to 0.8? 
+
+3.5 Advanced challenges (optional). If you can figure it out yourself, you are an absolute 'R master'!
+
+Based on the example from the proble, can you use simulation and R plotting to figure out the relationship  between statistical power vs significance level, sample size, and effect size? Three curves with y-axis being the statistical power and x-axis being the different significance level, or sample size, or effect size (each simulate 100 data points for plotting).
+
+### 4. relationship between sample size vs p-value
+Let's see the relationship between sample size vs p-value. 
+
+4.1 First, for sample A, let's generate 5 random number from normal distribution with mean of 10 and sd of 5. Then, for sample B, let's generate 5 random number from normal distribution with mean of 11 and sd of 5. Now we want to compare whether there is any significance difference between the mean of sample A and B, what should we do? write out the R code. Is there any significant difference for the mean of sample A and B?
+
+4.2 What if we now we increase the sample size to 500 (instead of 5) for sample A and B? Is there any significant difference for the mean of sample A and B? Write out R code. 
+
+4.3 Advanced challenges (optional). If you can figure it out yourself, you are an absolute 'R master'!
+Just like what we did for 3.5, can you use simulation and plotting to visualize the relationship between sample size and p-value? Plot out the curve with p-value on the y-axis and different sample number on the x-axis (with at least 100 datapoints).
+
+#### R Markdown
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.

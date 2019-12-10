@@ -27,7 +27,7 @@ boxplot(same_group,dif_group,col = c("green","orange"))
 mean_same_group <- c()
 mean_dif_group <- c()
 difference <- c()
-for (i in 10) {
+for (i in 1:1000) {
   trial$new_treatment <- sample(trial$treatment,44,replace = FALSE)
   same_group <- c()
   dif_group <- c()
@@ -50,3 +50,4 @@ for (i in 10) {
   difference <- c(difference,abs(mean(same_group)-mean(dif_group)))
 }
 difference
+hist(difference,col = "pink")

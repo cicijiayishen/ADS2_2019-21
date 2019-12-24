@@ -1,0 +1,35 @@
+---
+title: "Week_3_Sampling_distribution_and_the_Central_Limit_Theorem"
+author: "Cici"
+date: "2019.12.24"
+output: pdf_document
+---
+
+# LO:
+
+1. Explain the Central Limit Theorem
+
+2. Define the standard error of the mean
+
+3. Compare sampling distributions and underlying population distributions
+
+4. Describe a normal distribution and explain its importance
+
+# Notes:
+
+- 68-95-99.7 rule
+
+0.1%-2.1%-13.6%-34.1%
+
+- Sampling distribution
+
+Take samples of size n from a normal distribution and record their means.
+
+- Standard Error of the Mean (SEM)
+
+SEM = sd / sqrt(n)
+
+How well your sample mean estimates the true population mean.
+
+The greater SEM, the more different is the sample with population.
+

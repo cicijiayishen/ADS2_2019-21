@@ -1,0 +1,73 @@
+---
+title: "Week_1_Intuition_and_probability"
+author: "Cici"
+date: "2019.12.24"
+output: pdf_document
+---
+
+LO:
+
+1. Draw random numbers in R.
+
+2. Write loops in R.
+
+3. Visualise data in R.
+
+4. Estimate a number or probability.
+
+
+# Functions:
+
+head()
+
+table()
+
+sample(x, size, replace = FALSE, prob = NULL)
+
+test <- rnorm(x, mean = 0, sd = 1)
+
+boxplot()
+
+min(),max(),mean(),sd(),sum()
+
+length()
+
+unique()
+
+round(): si she wu ru
+
+hist(x, col, main, xlab, ylab)
+
+plot()
+
+choose()
+
+# Notes:
+
+- How to randomly choose numbers?
+```
+index <- sample(85,10,replace=FALSE)
+random10 <- chicago[index,]
+```
+- How to generate for loop?
+```
+df <- data.frame()
+for (n in 1:50) {
+  m <- c()
+  for (i in 1:10000) {
+    birth <- sample(365,n,replace = TRUE)
+    if (length(unique(birth))!=n) {
+      m <- c(m,1)
+    } else {
+      m <- c(m,0)
+    }
+  }
+  sum <- sum(m)
+  prob <- sum/10000
+  df <- rbind(df,c(n,prob))
+}
+```
+- How to use "or" operator?
+
+A | B
+

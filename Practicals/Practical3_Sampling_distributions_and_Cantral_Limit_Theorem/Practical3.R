@@ -47,7 +47,7 @@ dragon <- c()
 for (j in 1:500) {
   dragon <- c(dragon,dragonwing[j,])
 }
-plot(dragon)
+hist(dragon)
 meanlist <- c()
 for (i in 1:1000) {
   index <- sample(500,10,replace=FALSE)

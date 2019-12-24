@@ -1,0 +1,32 @@
+---
+title: "Week_2_Sampling_and_data_collection"
+author: "Cici"
+date: "2019.12.24"
+output: pdf_document
+---
+
+# LO:
+
+1. Explain the relationship between a population and a sample
+
+2. Explain the concept of sampling bias
+
+3. Give examples of sampling biases that can occur
+
+4. Design data collection procedures that avoid sampling bias
+
+# Notes:
+
+- Inferential statistics
+
+Draw conclusions about the population from knowledge of a sample.
+
+- Sampling error
+
+The *difference* between sample and population. (Not mistake.)
+
+- Sampling bias
+
+If samples are not random and individuals in the population do not have equal probability of being sampled, there will be sampling bias.
+
+- Sampling bias can be avoided by designing better.

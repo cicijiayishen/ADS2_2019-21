@@ -41,7 +41,7 @@ for (i in 1:10000) {
 sum <- sum(m)
 prob <- sum/10000
 #####Bonus: form n=1 to n=50#####
-df <- data.frame(n,probability)
+df <- data.frame()
 for (n in 1:50) {
   m <- c()
   for (i in 1:10000) {

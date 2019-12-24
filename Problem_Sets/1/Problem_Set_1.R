@@ -38,3 +38,12 @@ for (i in 1:1000000) {
   }
 }
 pass/1000000
+
+
+#Another mathematical way
+p_passing = 0
+for (s in 10:20){
+  p_s = 0.25^s*0.75^(20-s)*choose(20,s)
+  p_passing = p_passing+p_s
+}
+p_passing

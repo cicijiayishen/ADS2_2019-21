@@ -1,0 +1,54 @@
+---
+title: "Week_7_Hypothesis_testing"
+author: "Cici"
+date: "2019.12.27"
+output: pdf_document
+---
+
+# LO:
+1. learn the practical procedure and steps of hypothesis testing
+2. understand theoretical foundations of hypothesis testing: distributions for null/alternative hypotheses, critical values and type 1/2 errors
+3. appreciate the meaning of significance levels/p values and interpretation of results in relation to them
+4. appreciate different biases and errors that can occur in the hypothesis testing process
+
+# Notes:
+Procedure of hypothesis tests:
+
+1. Formulate the Null Hypothesis, Alternative Hypothesis # Null: nothing is happening; Alternative: something is happening.
+
+2. Design your experiment and collect data
+
+3. Summarise and describe your data
+
+4. Think about what you would expect if H0 were true.
+
+5. Could your data be explained by the Null Hypothesis?
+
+6. Determine the probability of your data given H0
+
+7. Interpret your p value and make a decision
+
+8. Be aware that hypothesis tests are not perfect
+
+Statistical models
+
+- Extract patterns from available data (training data) and can be used to predict new data (testing data)
+
+Types of tests
+
+- two-tailed: can be less or more (default)
+
+- one-tailed: need to be justified.
+
+P value
+
+- Probability of observing a value as or more extreme as the one you observed if the null hypothesis were true.
+
+Level of significance
+
+- p < 0.05: reject H0.
+- p > 0.05: cannot reject H0.
+
+Type 1/2 error: PPT 13/16
+
+- Think about the story LangLaiLe: type 1 error, villagers thought wolf is coming but there is no wolf at all. type 2 error, villagers thought no wolf is coming but there is.

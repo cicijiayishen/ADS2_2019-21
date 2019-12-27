@@ -1,0 +1,83 @@
+---
+title: "Week_6_Visualizing_data"
+author: "Cici"
+date: "2019.12.27"
+output: pdf_document
+---
+
+# LO:
+1. Use ggplot2 for data visualization.
+
+2. Think critically about data visualization choices.
+
+# Notes:
+
+- Layers
+
+1. data and aesthetic mapping. Data must be a data frame.
+
+2. a statistical transformation (stat).
+
+3. a geometric object (geom).
+
+4. a position adjustment.
+
+```
+ggplot(data=diamonds, aes(x=carat, y=price, group= cut))
++ geom_point(stat= "identity", aes(colour= cut), position = ¡°identity¡± )
+```
+- Dataset
+
+Old dataset can be replaced with %+%
+
+```
+p <- ggplot(mtcars, aes(mpg, wt, colour = cyl)) + geom_point()
+P
+mtcars <- transform(mtcars, mpg = mpg ^ 2)
+p %+% mtcars
+```
+
+- Aesthetics mapping
+
+aes()
+
+- Setting vs mapping
+
+map: (aes(color = "darkblue")) # creates a new variable called darkblue.
+
+set: (color = "darkblue") # a parameter of color darkblue.
+
+- Stat (statistical transformation): PPT 14/36
+
+identity: don't transfer data.
+
+- geom: PPT 16/36, 18/36
+
+- group = ...
+
+- position adjustment: PPT 21/36
+
+- overplotting: PPT 22/36 # use alpha value to adjust transparency.
+
+- faceting: PPT 23/36 #facet_grid(), facet_wrap().
+
+- scale
+
+color scale: PPT 29/36
+
+- title: labs()
+
+- Save a plot to a file
+
+```
+png(file=¡°my_plot.png¡±, width=500, height=500, units=¡°px¡±)
+d <-ggplot(diamonds, aes(carat)) + xlim(0, 3)
+d + stat_bin(aes(size = ..density.., colour=..density..), binwidth= 0.1, geom= "point", position="identity" )
+dev.off()
+```
+
+- Get data from ggplot
+```
+library(ggplot2)
+data("diamonds")
+```

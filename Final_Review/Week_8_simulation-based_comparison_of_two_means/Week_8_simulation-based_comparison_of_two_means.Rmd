@@ -1,0 +1,34 @@
+---
+title: "Week_8_simulation-based_comparison_of_two_means"
+author: "Cici"
+date: "2019.12.29"
+output: pdf_document
+---
+
+# LO:
+
+1. Understand the logic behind hypothesis tests using simulations
+
+2. Learn how to compare mean of a sample from a distribution to a value
+
+3. Learn how to compare means of two samples from two distributions
+
+4. Appreciate the advantages of simulation-based approach
+
+# Notes:
+
+- How to calculate cumulative distribution function (cdf)?
+
+pnorm(n)
+
+or qnorm() in reverse from cdf to n.
+
+- The difference of means from two distributions depends on effect size and sample size.
+
+# Functions:
+
+runif(n, min = 0, max = 1)
+
+replicate(n, function)
+
+par(new = TRUE) # set or query graphical parameters. 

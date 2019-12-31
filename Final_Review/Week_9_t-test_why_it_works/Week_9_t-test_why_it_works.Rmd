@@ -1,0 +1,43 @@
+---
+title: "Week_9_t-test_why_it_works"
+author: "Cici"
+date: "2019.12.31"
+output: pdf_document
+---
+
+# LO:
+
+1. Understand the mathematics behind the t-test. 
+
+2. Use the Student's t-distribution to determine the significance of a given sample.
+
+3. Describe the assumptions that need to be met to apply the t-test appropriately. 
+
+# Notes:
+
+- Student's t-distribution: continuous, symmetriic and bell-shaped, derived from a small sample size where the population standard deviation is unknown.
+
+- Calculation: t = Z/s PPT 8/26
+
+- degree of freedom: n - 1
+
+- t-test in R:
+
+t.test(SAMPLE, mu = VALUE)
+
+- Assumptions needed for t-test.
+
+1. data is continuous and randomly-selected.
+
+2. the sampling distribution is normally distributed. (If not normally distributed, transformation can make data more "normal")
+
+3. mean and standard error are independent.
+
+# Functions:
+
+scan("xxx.txt")
+
+t.test(x, y = NULL,
+       alternative = c("two.sided", "less", "greater"),
+       mu = 0, paired = FALSE, var.equal = FALSE,
+       conf.level = 0.95, ...)

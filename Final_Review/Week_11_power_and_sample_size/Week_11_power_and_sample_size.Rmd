@@ -1,0 +1,50 @@
+---
+title: "Week_11_power_and_sample_size"
+author: "Cici"
+date: "2020.1.2"
+output: pdf_document
+---
+
+# LO:
+
+1. Understand intuition behind power calculations
+
+2. Know how to perform power/sample size analysis with formula or in R
+
+3. Reveal the relationship among significance level, power, effect size and sample size
+
+4. Demonstrate different stages in clinical trails and stopping rules
+
+# Notes:
+
+1. effect size: the difference to be detected.
+
+2. variantion (sigmal square): larger sample size, smaller variation.
+
+3. P(type I error) = significance level (alpha)
+
+P (type II error) = beta
+
+power of a hypothesis = 1 - beta
+
+4. power is affected by alpha, sample size, effect size.
+
+5. calculate sample size in R.
+
+```
+delta = 2
+sigma = 5.7
+d = delta/sigma
+power.t.test(d = d, sig.level = 0.05, power = 0.8, type = 'two.sample', alternative = "two.sided")
+```
+power.t.test(n = NULL, delta = NULL, sd = 1, sig.level = 0.05,
+             power = NULL,
+             type = c("two.sample", "one.sample", "paired"),
+             alternative = c("two.sided", "one.sided"),
+             strict = FALSE, tol = .Machine$double.eps^0.25)
+             
+delta: effect size
+
+# Codes:
+
+seq(5,100,by = 5)

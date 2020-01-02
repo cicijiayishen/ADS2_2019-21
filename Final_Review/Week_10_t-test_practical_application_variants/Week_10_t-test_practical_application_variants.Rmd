@@ -1,0 +1,61 @@
+---
+title: "Week_10_t-test_practical_application_variants"
+author: "Cici"
+date: "2020.1.1"
+output: pdf_document
+---
+
+# LO:
+
+1. Reveal the steps of hypothesis testing
+
+2. Understand the basics on t-test
+
+3. Explain One-sample t-test
+
+4. Distinguish Two-sample paired and unpaired t-test
+
+# Notes:
+
+1. Important concepts:
+
+- significance level (alfa): the probability of rejecting the null hypothesis, given that the null hypothesis is true.
+
+- p-value: the probability of obtaining a result at least as extreme, given that the null hypothesis is true.
+
+- critical value: the value that a test statistic must exceed in order to reject the null hypothesis.
+
+- critical region: part of a statistical distribution in which the probability of a given hypothesis is less than the chosen significance level where the null hypothesis would be rejected.
+
+- test value: the value you get from t-test.
+
+2. z-test: large sample hypothesis test
+
+- condition: n >= 30 or normally distributed and known sigmal.
+
+3. t-test: small sample hypothesis test
+
+- condition: n < 30 or population standard deviation is unknown.
+
+- PPT 13/34
+
+- one sample one tailed t-test
+
+- one sample two tailed t-test
+
+- two sample paired t-test
+
+- two sample unpaired t-test
+
+# Codes:
+
+t.test(x, y = NULL,
+       alternative = c("two.sided", "less", "greater"),
+       mu = 0, paired = FALSE, var.equal = FALSE,
+       conf.level = 0.95, ...)
+
+all <- iris[which(iris$Species %in% c("setosa","versicolor")),]
+
+var.test(x, y, ratio = 1,
+         alternative = c("two.sided", "less", "greater"),
+         conf.level = 0.95, ...) # F test to compare variances of two samples.

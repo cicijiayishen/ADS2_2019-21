@@ -10,7 +10,7 @@ ny <- length(Y)
 mu_y <- 6
 var_y <- sqrt((1/(ny-1))*sum((Y-mean(Y))^2))
 
-t1 <- (abs(mean(X)-mu))/sd(X)*sqrt(length(X))
+t1 <- (abs(mean(X)-mu_x))/sd(X)*sqrt(length(X))
 t1
 p1 <- pt(X,df = length(X)-1)
 p1
